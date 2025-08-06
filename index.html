@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HỆ THỐNG QUẢN LÝ PHÒNG TẬP THỂ HÌNH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HỆ THỐNG QUẢN LÝ PHÒNG TẬP THỂ HÌNH</h1>
+        <nav id="nav-public">
+            <a href="#" onclick="showPage('home')">TRANG CHỦ</a>
+            <a href="#" onclick="showPage('login')">ĐĂNG NHẬP</a>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+        <nav id="nav-private" class="hidden">
+            <a href="#" onclick="showPage('home')">TRANG CHỦ</a>
+            <a href="#" onclick="showPage('member')">HỘI VIÊN</a>
+            <a href="#" onclick="showPage('trainer')">HUẤN LUYỆN VIÊN</a>
+            <a href="#" onclick="showPage('payment')">THANH TOÁN</a>
+            <a href="#" onclick="showPage('manage-schedule')">QUẢN LÝ LỊCH TẬP</a>
+            <a href="#" onclick="showPage('package')">GÓI TẬP</a>
+            <a href="#" onclick="showPage('feedback')">PHẢN HỒI</a>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="home" class="page">
+            <div class="hero-section">
+                <h2>CHÀO MỪNG ĐẾN VỚI PHÒNG TẬP THỂ HÌNH CỦA CHÚNG TÔI</h2>
+                <p class="hero-text">QUẢN LÝ LỊCH TẬP, HỘI VIÊN, HUẤN LUYỆN VIÊN MỘT CÁCH CHUYÊN NGHIỆP</p>
+            </div>
+            <div class="features mt-5">
+                <div class="feature-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>LỊCH TẬP</h3>
+                    <p>THEO DÕI VÀ SẮP XẾP LỊCH TẬP DỄ DÀNG</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-users"></i>
+                    <h3>HỘI VIÊN</h3>
+                    <p>QUẢN LÝ THÔNG TIN HUẤN LUYỆN VIÊN</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>HUẤN LUYỆN VIÊN</h3>
+                    <p>PHÂN CÔNG VÀ CẬP NHẬT HUẤN LUYỆN VIÊN</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="member" class="page hidden">
+            <div class="member-header">
+                <h2>THÔNG TIN HỘI VIÊN</h2>
+                <button class="btn btn-primary">
+                    <i class="fas fa-user-edit"></i> Cập nhật thông tin
+                </button>
+            </div>
+
+            <div class="member-profile">
+                <div class="profile-info">
+                    <h3>Nguyễn Văn A <span class="badge badge-premium">Premium</span></h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-birthday-cake"></i> Ngày sinh:</span>
+                            <span>01/01/1990</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-id-card"></i> Mã HV:</span>
+                            <span>HV20230001</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-dumbbell"></i> Gói tập:</span>
+                            <span>Premium 6 tháng</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-user-tie"></i> PT:</span>
+                            <span>Trần Văn B</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-phone"></i> Điện thoại:</span>
+                            <span>0987654321</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-envelope"></i> Email:</span>
+                            <span>nguyenvana@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-profile">
+                    <div class="profile-info">
+                        <h3>Nguyễn Văn A <span class="badge badge-premium">Premium</span></h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-birthday-cake"></i> Ngày sinh:</span>
+                                <span>01/01/1990</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-id-card"></i> Mã HV:</span>
+                                <span>HV20230001</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-dumbbell"></i> Gói tập:</span>
+                                <span>Premium 6 tháng</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-user-tie"></i> PT:</span>
+                                <span>Trần Văn B</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-phone"></i> Điện thoại:</span>
+                                <span>0987654321</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-envelope"></i> Email:</span>
+                                <span>nguyenvana@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Trần Thị B <span class="badge badge-standard">Standard</span></h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-birthday-cake"></i> Ngày sinh:</span>
+                                <span>12/03/1995</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-id-card"></i> Mã HV:</span>
+                                <span>HV20230002</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-dumbbell"></i> Gói tập:</span>
+                                <span>Standard 3 tháng</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-user-tie"></i> PT:</span>
+                                <span>Trần Văn B</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-phone"></i> Điện thoại:</span>
+                                <span>0912345678</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-envelope"></i> Email:</span>
+                                <span>tranthib@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Lê Văn C <span class="badge badge-basic">Basic</span></h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-birthday-cake"></i> Ngày sinh:</span>
+                                <span>22/08/1988</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-id-card"></i> Mã HV:</span>
+                                <span>HV20230003</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-dumbbell"></i> Gói tập:</span>
+                                <span>Basic 1 tháng</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-user-tie"></i> PT:</span>
+                                <span>Nguyễn Văn D</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-phone"></i> Điện thoại:</span>
+                                <span>0901122334</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label"><i class="fas fa-envelope"></i> Email:</span>
+                                <span>levanc@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-header">
+                <h2>Danh Sách Hội Viên</h2>
+                <button class="btn btn-primary" onclick="showAddMemberForm()">Thêm hội viên</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Họ tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Gói tập</th>
+                        <th>PT</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="member-list"></tbody>
+            </table>
+            <div id="member-form" class="hidden">
+                <h3>Thêm/Sửa hội viên</h3>
+                <input id="mem-name" placeholder="Họ tên">
+                <input id="mem-dob" placeholder="Ngày sinh">
+                <input id="mem-phone" placeholder="Điện thoại">
+                <input id="mem-email" placeholder="Email">
+                <input id="mem-package" placeholder="Gói tập">
+                <input id="mem-trainer" placeholder="PT">
+                <button onclick="saveMember()">Lưu</button>
+                <button onclick="hideMemberForm()">Hủy</button>
+            </div>
+            <h3 class="mt-5">Lịch sử tập luyện</h3>
+            <div class="history-list">
+                <div class="history-item">
+                    <div class="history-date">15/07/2023</div>
+                    <div class="history-desc">Buổi tập thể hình cơ bản</div>
+                    <div class="history-status completed">
+                        <i class="fas fa-check-circle"></i> Hoàn thành
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="trainer" class="page hidden">
+            <div class="trainer-header">
+                <h2>Quản Lý Huấn Luyện Viên</h2>
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Thêm HV mới
+                </button>
+            </div>
+
+            <div class="trainer-card">
+                <div class="trainer-details">
+                    <h3>Trần Văn B</h3>
+                    <p class="specialization"><i class="fas fa-star"></i> Chuyên gia thể hình</p>
+                    <div class="trainer-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-user-friends"></i>
+                            <span>12 Học viên</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>5 năm kinh nghiệm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-4">Lịch làm việc tuần này</h3>
+            <div class="schedule-calendar">
+                <div class="schedule-grid">
+                    <div class="day-schedule">
+                        <div class="day-header">Thứ 2</div>
+                        <div class="time-slot available">7h-9h</div>
+                        <div class="time-slot booked">17h-19h</div>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-header">Thứ 3</div>
+                        <div class="time-slot available">7h-9h</div>
+                        <div class="time-slot available">17h-19h</div>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-header">Thứ 4</div>
+                        <div class="time-slot booked">7h-9h</div>
+                        <div class="time-slot available">17h-19h</div>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-header">Thứ 5</div>
+                        <div class="time-slot available">7h-9h</div>
+                        <div class="time-slot booked">17h-19h</div>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-header">Thứ 6</div>
+                        <div class="time-slot booked">7h-9h</div>
+                        <div class="time-slot booked">17h-19h</div>
+                    </div>
+                </div>
+            </div>
+            <div id="trainer-schedule" class="page hidden">
+                <h2>Lịch cá nhân của tôi</h2>
+                <div class="trainer-calendar-controls">
+                    <label>Chế độ xem:</label>
+                    <select id="calendar-view" onchange="changeCalendarView()">
+                        <option value="day">Ngày</option>
+                        <option value="week" selected>Tuần</option>
+                        <option value="month">Tháng</option>
+                    </select>
+                    <input type="date" id="calendar-date" onchange="changeCalendarDate()">
+                </div>
+                <div id="trainer-schedule-list">
+                    <!-- Danh sách buổi tập sẽ được JS render -->
+                </div>
+            </div>
+            <div id="my-students" class="page hidden">
+                <h2>Học viên của tôi</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Họ tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Điện thoại</th>
+                            <th>Email</th>
+                            <th>Gói tập</th>
+                            <th>Chi tiết</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="payment" class="page hidden">
+            <h2>Lịch Sử Thanh Toán</h2>
+            <div class="payment-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Mô tả</th>
+                            <th>Số tiền</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>05/07/2023</td>
+                            <td>Gói Premium 6 tháng</td>
+                            <td>5.000.000đ</td>
+                            <td class="status-paid">Đã thanh toán</td>
+                        </tr>
+                        <tr>
+                            <td>15/06/2023</td>
+                            <td>Phí gia hạn</td>
+                            <td>800.000đ</td>
+                            <td class="status-paid">Đã thanh toán</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="payment-summary">
+                <h3>Tổng chi tiêu: <span>5.800.000đ</span></h3>
+            </div>
+        </div>
+
+        <div id="package" class="page hidden">
+            <h2>Gói Tập Của Bạn</h2>
+            <div class="package-container">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Gói Premium</h3>
+                        <span class="package-price">5.000.000đ</span>
+                    </div>
+                    <div class="package-details">
+                        <p><i class="fas fa-check"></i> 36 buổi tập</p>
+                        <p><i class="fas fa-check"></i> Huấn luyện viên cá nhân</p>
+                        <p><i class="fas fa-check"></i> Đánh giá thể lực</p>
+                        <p><i class="fas fa-check"></i> Hỗ trợ dinh dưỡng</p>
+                    </div>
+                    <div class="package-footer">
+                        <span class="package-expiry">Hết hạn: 05/01/2024</span>
+                        <button class="btn btn-primary">Gia hạn</button>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <h4>Tiến độ sử dụng</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 25%"></div>
+                    </div>
+                    <span class="progress-text">9/36 buổi đã sử dụng</span>
+                </div>
+            </div>
+        </div>
+        <div id="feedback" class="page hidden">
+            <h2>Gửi phản hồi</h2>
+            <form onsubmit="return sendFeedback(event)">
+                <textarea id="feedback-content" placeholder="Nhập nội dung phản hồi..." required></textarea>
+                <button type="submit" class="btn btn-primary">Gửi</button>
+            </form>
+            <div id="feedback-result"></div>
+        </div>
+        <div id="review" class="page hidden">
+            <h2>Đánh giá PT hoặc Gói tập</h2>
+            <form onsubmit="return sendReview(event)">
+                <select id="review-type" required>
+                    <option value="">Chọn đối tượng đánh giá</option>
+                    <option value="pt">Huấn luyện viên</option>
+                    <option value="package">Gói tập</option>
+                </select>
+                <textarea id="review-content" placeholder="Nhập nội dung đánh giá..." required></textarea>
+                <button type="submit" class="btn btn-primary">Gửi</button>
+            </form>
+            <div id="review-result"></div>
+        </div>
+        <div id="account" class="page hidden">
+            <h2>Quản lý tài khoản</h2>
+            <button class="btn btn-primary" onclick="showAddAccountForm()">Thêm tài khoản</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên đăng nhập</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Quyền</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="account-list"></tbody>
+            </table>
+            <div id="account-form" class="hidden">
+                <h3>Thêm/Sửa tài khoản</h3>
+                <input id="acc-username" placeholder="Tên đăng nhập">
+                <input id="acc-fullname" placeholder="Họ tên">
+                <input id="acc-email" placeholder="Email">
+                <select id="acc-role">
+                    <option value="admin">Admin</option>
+                    <option value="trainer">Huấn luyện viên</option>
+                    <option value="member">Hội viên</option>
+                </select>
+                <button onclick="saveAccount()">Lưu</button>
+                <button onclick="hideAccountForm()">Hủy</button>
+            </div>
+        </div>
+        <div id="login" class="page hidden">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login-tab')">Đăng nhập</button>
+                <button class="tab-btn" onclick="switchTab('register-tab')">Đăng ký</button>
+            </div>
+
+            <div id="login-tab" class="auth-form">
+                <h2 class="text-center mb-4">Đăng Nhập Hệ Thống</h2>
+                <form onsubmit="return login(event)">
+                    <div class="form-group">
+                        <label>Tài khoản</label>
+                        <input type="text" class="form-control" placeholder="Nhập tài khoản" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password" class="form-control" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+                </form>
+            </div>
+
+            <div id="register-tab" class="auth-form hidden">
+                <h2 class="text-center mb-4">Đăng Ký Tài Khoản</h2>
+                <form onsubmit="return register(event)">
+                    <div class="form-group">
+                        <label>Tên đăng nhập</label>
+                        <input type="text" class="form-control" id="reg-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password" class="form-control" id="reg-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nhập lại mật khẩu</label>
+                        <input type="password" class="form-control" id="reg-confirm" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phân quyền</label>
+                        <select class="form-control" id="reg-role" required>
+                            <option value="">Chọn quyền</option>
+                            <option value="member">Hội viên</option>
+                            <option value="trainer">Huấn luyện viên</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
+                </form>
+            </div>
+        </div>
+        <div id="manage-schedule" class="page hidden">
+            <h2>Quản lý lịch tập</h2>
+            <button class="btn btn-primary" onclick="showAddScheduleForm()">Thêm lịch tập</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hội viên</th>
+                        <th>Huấn luyện viên</th>
+                        <th>Ngày</th>
+                        <th>Giờ</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-list"></tbody>
+            </table>
+            <div id="schedule-form" class="hidden">
+                <h3>Thêm/Sửa lịch tập</h3>
+                <input id="sch-member" placeholder="Hội viên">
+                <input id="sch-trainer" placeholder="Huấn luyện viên">
+                <input type="date" id="sch-date">
+                <input type="time" id="sch-time">
+                <select id="sch-status">
+                    <option value="Chưa tập">Chưa tập</option>
+                    <option value="Hoàn thành">Hoàn thành</option>
+                </select>
+                <button onclick="saveSchedule()">Lưu</button>
+                <button onclick="hideScheduleForm()">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Hệ Thống Quản Lý Thể Hình</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
