@@ -1,5 +1,3 @@
-// This is the JavaScript file for the front-end3 application.
-// It handles user interactions, manages page visibility, and implements functionality for login, registration, and member management.
 
 let users = JSON.parse(localStorage.getItem('users')) || [];
 let members = JSON.parse(localStorage.getItem('members')) || [];
